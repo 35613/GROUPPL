@@ -69,7 +69,7 @@ GROUPPL 서비스 개발 프로젝트.
 > - [Github](https://github.com)
 > - [Trello](https://trello.com)
 > - [Facebook](https://www.facebook.com)
-
+> - [bootstrapk](http://bootstrapk.com/getting-started/#examples)
 
 
 ### 기능 - 수정필요
