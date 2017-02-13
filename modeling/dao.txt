@@ -1,0 +1,138 @@
+do_search_
+do_insert_
+do_update_
+do_delete_
+
+수정
+
+
+
+boardDAO
+가입한 프로젝트 게시글 가져오는 메소드
+-do_search_board()
+-do_search_comment()
+-do_insert_comment()
+-do_update_board()
+-do_delete_board()
+첨부파일 관리
+-do_search_file()
+-do_insert_file()
+-do_update_file()
+프로젝트 글쓰기
+-do_insert_board()
+-do_insert_file()
+
+
+
+
+projectDAO
+넘겨받은 프로젝트 시퀀스로 프로젝트 정보 서치하는 메소드
+-do_search_project()
+프로젝트 수정
+-do_update_project()
+가입가능한 프로젝트 검색
+-do_search_openproject()
+프로젝트 생성
+-do_insert_project()
+저장된 첨부파일 리스트 불러오기
+-do_search_filelist()
+
+
+
+
+scheduleDAO
+오늘 일정 받아오는 메소드
+-do_search_schedule()
+프로젝트 일정 가져오는 메소드
+-do_search_projectschedule()
+개인일정 가져오는 메소드
+-do_search_userschedule()
+개인일정 쓰기
+-do_insert_userschedule()
+개인일정 댓글 보기
+-do_search_usercomment()
+개인일정 댓글 쓰기
+-do_insert_usercomment()
+개인일정 일정삭제
+- do_delete_userschedule()
+개인일정 일정수정
+- do_update_userschedule()
+프로젝트 일정 쓰는 메소드
+-do_insert_projectschedule()
+프로젝트일정 읽오는 메소드
+-do_search_projectschedule()
+-do_search_projectcomment()
+-do_insert_projectcomment()
+-do_delete_projectschedule()
+-do_update_projectschedule()
+
+
+
+
+
+membersDAO
+유저가 소속된 프로젝트 서치 메소드
+-do_search_joinproject()
+받은 hidden parameter가 탈퇴면
+do_delete_member()
+가입된 회원 가져오는 메소드
+-do_search_joinmember()
+프로젝트 생성
+-do_insert_member()
+
+
+
+userDAO
+유저정보 가져오는 메소드
+-do_search_userinfo()
+유저가 가입한 프로젝트 리스트 가져오는 메소드
+-do_search_userproject()
+서치 아이디
+-do_search_id()
+회원 가입
+-do_insert_user()
+회원정보 수정 메소드
+-do_update_user()
+회원정보 서치 메소드
+-do_search_user()
+멤버구하기
+-do_search_openuser()
+
+
+
+tagDAO
+기술 서치 메소드
+-do_search_usertag()
+기술 수정 메소드
+-do_update_usertag()
+프로젝트기술 서치 메소드
+-do_search_projecttag()
+프로젝트기술 업데이트 메소드
+-do_update_projecttag()
+모든테그 가져오기 검색시 사용
+-do_search_tag()
+회원 가입 시 테그 삽입
+-do_insert_user()
+프로젝트 생성시 테그 삽입
+-do_insert_project()
+
+
+
+
+messageDAO
+지원서 업설트하는 메소드
+-do_upsert_application()
+-do_upsert_invitation()
+모든 쪽지 불러오기
+-do_search_application()
+-do_search_invitation()
+
+
+
+
+
+
+
+
+
+
