@@ -1,2 +1,2 @@
  레이아웃참고
-> - [bootstrapk](http://bootstrapk.com/getting-started/#examples)
+> - [부트스트랩예제들](http://bootstrapk.com/getting-started/#examples)
