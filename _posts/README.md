@@ -1,3 +1,0 @@
-# Posts
-
-Jekyll Post
