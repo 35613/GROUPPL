@@ -23,8 +23,8 @@ public class SuperDAO {
 
     public Connection getConnection() throws SQLException {
         Connection conn = null;
-        String url = "jdbc:oracle:thin:@211.238.142.180:1521:xe";
-        conn = DriverManager.getConnection(url,"sist2","sist2");
+        String url = "jdbc:oracle:thin:@eagle5.cmizhvqifjnm.ap-northeast-2.rds.amazonaws.com:1521:ORCL";
+        conn = DriverManager.getConnection(url,"admin","12qw12qw");
         return conn;
     }
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" 
+        codebase="http://localhost:8080"
+        href="webstart_demo.jnlp">
+    <information>
+        <title>WebStart Resource Loading Example</title>
+        <vendor>micropilot.co.kr</vendor>
+ <offline-allowed />
+    </information>
+    <resources>
+        <!-- Application Resources -->
+        <j2se version="1.6+"
+              href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="webstart_demo.jar" main="true" />
+    </resources>
+    <application-desc
+         name="WebStart Demo Application"
+         main-class="webstart.demo.MainFrame">
+     </application-desc>
+     <update check="background"/>
+</jnlp>
