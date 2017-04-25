@@ -27,113 +27,29 @@
     
 </head>
 
-<%
-    response.setHeader("Cache-Control","no-store");
-    response.setHeader("Pragma","no-cache");
-    response.setDateHeader("Expires",0);
-    if (request.getProtocol().equals("HTTP/1.1"))
-        response.setHeader("Cache-Control", "no-cache");
-%>
-
-<%
-    UserBean userBean = new UserBean();
-    userBean = (UserBean)session.getAttribute("userBean");
-
-
-    String nickname = "";
-    String userImg = "";
-    String root = "/upload/";
-    int applicationsize = 0;
-    int invitationsize = 0;
-
-    if (userBean != null) {
-    	nickname = userBean.getNickname();
-        MessageDAO messageDAO = MessageDAO.getInstance();
-        invitationsize = messageDAO.do_search_invitation(userBean.getEmail()).size();
-        applicationsize = messageDAO.do_search_application(userBean.getEmail()).size();
-        userImg = root + userBean.getImage();
-        System.out.println(userImg);
-    }
-
-%>
-
-<%--상단바--%>
-<nav class="navbar navbar-default navbar-fixed-top ">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <img src="/view/image/logo/logo.png" alt="" width="150" height="50" class="btn" <% if (userBean != null) { %> onclick="location.href='/view/nonPopup/projectboard.jsp'" <% } %> >
-
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <%
-                    // 로그인 했을 때만 projects page, 일정페이지 보여줌
-                    if (userBean != null) {
-                %>
-                <li style="font-size: 20px; "><a href="/controller/Project_Page_Controller.jsp">Projects</a></li>
-                <li style="font-size: 20px;"><a href="/controller/User_Schedule_Controller.jsp" >Schedule</a></li>
-                <%
-                    }
-                %>
-                <li style="font-size: 20px;"><a href="/view/nonPopup/about.jsp">About</a></li>
-            </ul>
-            <%
-                // 로그인 했을 때만 드롭다운 보여줌
-                if (userBean != null) {
-            %>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <% if (!userImg.equals("") && !userImg.equals("/upload/없음")) { %> <img src="<%=userImg%>" alt="" width="30" height="30" class="img-rounded"> <%--이미지 있을 시 이미지 사용--%>
-                        <% } else { %> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <% } %>                    <%--이미지 없을 시 아이콘 사용--%>
-                        <%=nickname%>
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="/controller/Invitation_Message_Controller.jsp">초대가 <strong><%=invitationsize%></strong>건 있습니다.</a></li>
-                        <li><a href="/controller/Application_Message_Controller.jsp">지원이 <strong><%=applicationsize%></strong>건 있습니다.</a></li>
-                        <li class="divider"></li>
-                        <li><a href="/view/nonPopup/profileedit.jsp">회원정보 수정</a></li>
-                        <li><a href="/controller/Logout_Controller.jsp">로그아웃</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <%
-                }
-            %>
-        </div>
-    </div>
-</nav>
-
-
 <div>
 	<%--컨텐츠---------------------------------------------------------------------%>
   <section class="background">
     <div class="content-wrapper">
       <p class="content-title" style="margin-right: 21%">Grouppl</p>
-      <p class="content-subtitle" style="margin-right: 21%">Scroll down and up to see the effect!</p>
+      <p class="content-subtitle" style="margin-right: 21%">쉽고, 빠르고, 효율적인 프로젝트 일정관리 서비스 Grouppl</p>
     </div>
-    <div class="sidebar" style="padding-top: 3%;margin-top: 0px;top: 10%;">
+    <div class="sidebar" style="padding-top: 3%;margin-top: 0px;top: 3%;">
   <div class="login-wrap">
 	<div class="login-html">
 		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
 		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-		<div class="login-form">
+		
+		<div class="login-form" >
+			<form action="/controller/Login_Controller.jsp" method="post">
 			<div class="sign-in-htm">
 				<div class="group">
 					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
+					<input id="user" name="user" type="text" class="input">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
+					<input id="pass" name="pass" type="password" class="input" data-type="password">
 				</div>
 				<div class="group">
 					<input id="check" type="checkbox" class="check" checked>
@@ -144,10 +60,11 @@
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
-					<a href="#forgot">Forgot Password?</a>
+					<a href="#forgot">비밀번호를 잊으셧나요?</a>
 				</div>
 			</div>
-			<div class="sign-up-htm">
+			</form>
+			<form class="sign-up-htm" action="/controller/Signup_Controller.jsp" method="post">
 				<div class="group">
 					<label for="user" class="label">Username</label>
 					<input id="user" type="text" class="input">
@@ -169,9 +86,9 @@
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
-					<label for="tab-1">Already Member?</a>
+					<label for="tab-1">회원가입을 완료하셧나요?</a>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 </div>
@@ -179,14 +96,15 @@
   </section>
   <section class="background">
     <div class="content-wrapper">
-      <p class="content-title">Cras lacinia non eros nec semper.</p>
-      <p class="content-subtitle">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut massa mattis nibh semper pretium.</p>
+      <p class="content-title">Grouppl에는 항상 새로운 사람들, 새로운 도전이 있습니다.</p>
+      <p class="content-subtitle">Grouppl은 세계 128개 나라의 1,243,546명의 개발자들이 가입되어 있습니다.</p>
+      <p class="content-subtitle">수많은 사람들과 새로운 도전을 해보세요.</p>
     </div>
   </section>
   <section class="background">
     <div class="content-wrapper">
-      <p class="content-title">Etiam consequat lectus.</p>
-      <p class="content-subtitle">Nullam tristique urna sed tellus ornare congue. Etiam vitae erat at nibh aliquam dapibus.</p>
+      <p class="content-title">Grouppl=포트폴리오.</p>
+      <p class="content-subtitle">항상 시간이 부족한 취준생! 더이상 포트폴리오에 시간을 쏟지 마세요 Grouppl의 모든 활동내역이 당신의 포트폴리오가 됩니다.</p>
     </div>
   </section>
   </div>
@@ -256,6 +174,12 @@
 	function previousItem() {
 	  var $currentSlide = $(".background").eq(currentSlideNumber);
 	  $currentSlide.removeClass("down-scroll").addClass("up-scroll");
+	}
+	
+	
+	function login() {
+		 location.href = "/controller/Login_Controller.jsp";
+		
 	}
 </script>
 	

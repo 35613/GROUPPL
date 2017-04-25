@@ -40,10 +40,10 @@ html, body {
           transform: translateY(15vh);
 }
 .background:nth-child(2) {
-  background-image: url(http://s8.postimg.org/ow4wgk4px/ugqti_Lg.jpg);
+  background-image: url(/view/image/팀프로젝트2.jpg);
 }
 .background:nth-child(3) {
-  background-image: url(/view/image/팀프로젝트2.jpg);
+  background-image: url(http://s8.postimg.org/ow4wgk4px/ugqti_Lg.jpg);
 }
 
 /* Set stacking context of slides */

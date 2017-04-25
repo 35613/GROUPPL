@@ -13,9 +13,12 @@
 %>
 
 <%
-    String email = request.getParameter("email");
-    String pw = request.getParameter("pw");
-
+MessageDAO messageDAO = MessageDAO.getInstance();  
+String email = request.getParameter("user");
+    String pw = request.getParameter("pass");
+	
+    System.out.println(email);
+    System.out.println(pw);
 //    유저 정보 얻어오기
     UserDAO userDAO = UserDAO.getInstance();
     UserBean userBean = new UserBean();
@@ -63,4 +66,4 @@
 
     }
 
-%>MessageDAO messageDAO = MessageDAO.getInstance();
+%>

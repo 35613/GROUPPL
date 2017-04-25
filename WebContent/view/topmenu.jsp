@@ -68,6 +68,8 @@
                 %>
                 <li style="font-size: 20px; "><a href="/controller/Project_Page_Controller.jsp">Projects</a></li>
                 <li style="font-size: 20px;"><a href="/controller/User_Schedule_Controller.jsp" >Schedule</a></li>
+                <li style="font-size: 20px;"><a href="/view/nonPopup/myHome.jsp" >MyPageHome</a></li>
+                <li style="font-size: 20px;"><a href="/view/nonPopup/projectHome.jsp" >ProjectHome</a></li>
                 <%
                     }
                 %>
