@@ -995,6 +995,7 @@ main {
   flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
+
 }
 .title {
   background-color: #fff;
@@ -1027,8 +1028,9 @@ a:hover {
   transition: all .5s;
 }
 .larg {
-  max-width: 960px;
-  margin: 30px auto;
+  width: 1180px;
+  margin-left: 280px;
+  margin-right: 0px;
   padding: 0 30px;
 }
 .larg div {
@@ -1056,4 +1058,18 @@ a:hover {
   margin-left: 10px;
   padding: 0 15px;
   border-left: 1px solid #ccc;
+}
+.panel-footer .progress .progress-bar{
+	
+                                   min-width: 2em;
+                                   padding-left: 0px;
+                                   padding-right: 0px;
+                                   margin-top: 0px;
+                                   margin-bottom: 0px;
+                                   border-left-width: 0px;
+                                   border-right-width: 0px;
+                                   height: 20px;
+                                   border-top-width: 0px;
+                                   border-bottom-width: 0px;
+                                   
 }

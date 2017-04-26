@@ -31,13 +31,11 @@
 %>
 
 <%--상단바--%>
-<jsp:include page="/view/topmenu.jsp"></jsp:include>
+<jsp:include page="/view/myHome.jsp"></jsp:include>
 
 <%--컨텐츠--%>
-<div class="container bs-docs-container">
-    <div class="row">
-        <div class="col-md-9" role="main">
-
+<div style="width: 80%">
+  <div class="larg" style="display: inline-block; margin-top: 61px;width: 80%">
             <%--왼쪽부분--%>
             <div class="bs-docs-section">
 
@@ -61,13 +59,13 @@
                 %>
                         <div class="panel panel-default">
                             <div class="panel-heading form-inline">
-                                    <% if (!imgUrl.equals("") && !imgUrl.equals("/upload/없음")) { %> <img src="<%=imgUrl%>" alt="" width="30" height="30" class="img-rounded"> <%--이미지 있을 시 이미지 사용--%>
+                                    <% if (!imgUrl.equals("") && !imgUrl.equals("/upload/없음")) { %> <img src="<%=imgUrl%>" alt="" width="35" height="35" class="img-rounded" style="margin-right: 10px;"> <%--이미지 있을 시 이미지 사용--%>
                         			<% } else { %> <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> <% } %>                    <%--이미지 없을 시 아이콘 사용--%>
-                                    <a style="font-size: 20px" onclick="clickprojectname(<%=projectseq%>)"> <%=projectname%> </a>
+                                    <a style="height:20px; font-size: 18px;display: inline-block; vertical-align: middle;" onclick="clickprojectname(<%=projectseq%>)"> <%=projectname%> </a>
                                 <%
                                     if (!projectlist.get(i).getLeader().equals(userBean.getEmail())) {
                                 %>
-                                    <a href="#" class="btn btn-default" onclick="leave(<%=projectseq%>)" role="button">탈퇴</a>
+                                    <input type="button" class="btn btn-default" onclick="leave(<%=projectseq%>)" style="float: right; height: 35px" value="탈퇴">
                                 <%
                                     }
                                 %>
@@ -79,8 +77,8 @@
                             </div>
                             <div class="panel-footer">
                                 <%--진행바--%>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="<%=progress%>" aria-valuemin="0" aria-valuemax="100" style="width: <%=progress%>%; min-width: 2em;">
+                                <div class="progress" style="padding-left: 0px; padding-right: 0px;">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="<%=progress%>" aria-valuemin="0" aria-valuemax="100" style="width:<%=progress%>%; ">
                                         <%=progress%>%
                                     </div>
                                 </div>
@@ -94,18 +92,22 @@
                 <button type="button" class="btn btn-primary btn-lg btn-block">더 보기</button>
 
             </div>
-        </div>
 
-        <%--오른쪽 부분--%>
-        <div class="col-md-3" role="complementary">
+         </div>
+         </div>
+         
+         <div  style="width: 20%;margin-top: 76px; margin-left: 30px; ">
+          <div class="asd" style=" width:320px; border:solid black 2px; background-color: #F7F7F7;padding: 20px; border: 1px solid #E2E2E2; ">
             <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
                 <jsp:include page="/view/rightmenu.jsp"></jsp:include>
             </nav>
-        </div>
-
-    </div>
+      </div>
 </div>
+	 
+	          <%--오른쪽 부분--%>
+     
 
+        
 <script type="text/javascript">
     function clickprojectname(projectseq){
         var form = $('<form></form>');

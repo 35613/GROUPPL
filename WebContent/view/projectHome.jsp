@@ -60,26 +60,26 @@
 
 <span class="bckg"></span>
 <header>
-  <h1>MyPage</h1>
+  <h1>Project</h1>
   <nav>
     <ul>
       <li>
-        <a href="javascript:void(0);" data-title="Projects">Projects</a>
+        <a href="javascript:void(0);" data-title="Projects">홈</a>
       </li>
       <li>
-        <a href="javascript:void(0);" data-title="Team">Team</a>
+        <a href="javascript:void(0);" data-title="Team">팀</a>
       </li>
       <li>
-        <a href="javascript:void(0);" data-title="Diary">Diary</a>
+        <a href="javascript:void(0);" data-title="Diary">일정표</a>
       </li>
       <li>
-        <a href="javascript:void(0);" data-title="Timeline">Timeline</a>
+        <a href="javascript:void(0);" data-title="Timeline">타임라인</a>
       </li>
       <li>
-        <a href="javascript:void(0);" data-title="Settings">Settings</a>
+        <a href="javascript:void(0);" data-title="Settings">프로젝트 수정</a>
       </li>
       <li>
-        <a href="javascript:void(0);" data-title="Search">Search</a>
+        <a href="javascript:void(0);" data-title="Search">검색</a>
       </li>
     </ul>
   </nav>

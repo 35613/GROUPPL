@@ -39,15 +39,12 @@
 %>
 
 <%--상단바--%>
-<jsp:include page="/view/topmenu.jsp"></jsp:include>
+<jsp:include page="/view/myHome.jsp"></jsp:include>
 
 <%--컨텐츠--%>
-<div class="container bs-docs-container">
-    <div class="row">
-
-        <%--왼쪽부분--%>
-        <div class="col-md-9" role="main">
-            <div class="bs-docs-section">
+<main>
+  <article class="larg">
+      <div class="bs-docs-section">
                 <%--셀렉트--%>
                 <div class="item" style="margin-bottom: 10px">
                     <select class="form-control" style="width: 20%" id="select" >
@@ -72,20 +69,22 @@
                 <button type="button" class="btn btn-primary btn-lg btn-block" id="more" >더 보기</button>
 
             </div>
-        </div>
-
+    
+    
+    
+    
+  </article>
+</main>
         <%--오른쪽 부분--%>
-        <div class="col-md-3" role="complementary">
+       <%--  <div class="col-md-3" role="complementary">
             <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
                 <jsp:include page="/view/rightmenu.jsp"></jsp:include>
             </nav>
         </div>
+ --%>
 
 
 
-
-    </div>
-</div>
 
 
 <div id="dialogdiv"></div>

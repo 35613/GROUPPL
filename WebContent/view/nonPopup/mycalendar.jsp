@@ -63,7 +63,7 @@ boolean nvl(String msg) {
 		String dates = (year + "") + "-" + two(month + "") + "-" + two(day + "");
 		System.out.println("dates = " + dates);
 		s = "<table>";
-		s += "<col width='98'/>";
+		s += "<col width='150'/>";
 
 		for (UserScheduleBean lcd : uslist) {
 			System.out.println("lcd.getDodate().substring(0, 10) = " + lcd.getDodate().substring(0, 10));
@@ -108,9 +108,7 @@ boolean nvl(String msg) {
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="/view/JS/bootstrap.min.js"></script>
 <style type="text/css">
-body {
-	padding-top: 70px;
-}
+
 </style>
 </head>
 <body>
@@ -165,14 +163,11 @@ body {
 
 
 	<%--상단바--%>
-	<jsp:include page="/view/topmenu.jsp"></jsp:include>
+	<jsp:include page="/view/myHome.jsp"></jsp:include>
 
 	<%--컨텐츠--%>
-	<div class="container bs-docs-container">
-		<div class="row">
-
-			<%--왼쪽부분--%>
-			<div class="col-md-9" role="main">
+	<main>
+  <article class="larg">
 				<div class="bs-docs-section">
 
 					
@@ -209,13 +204,13 @@ body {
 					</script>
 
 						<table border="1" style="border-color: gray;" >
-							<col width="100" />
-							<col width="100" />
-							<col width="100" />
-							<col width="100" />
-							<col width="100" />
-							<col width="100" />
-							<col width="100" />
+							<col width="150" />
+							<col width="150" />
+							<col width="150" />
+							<col width="150" />
+							<col width="150" />
+							<col width="150" />
+							<col width="150" />
 
 
 							<tr height="50" class="bg-info" >
@@ -234,7 +229,7 @@ body {
 								<td style="text-align: center;">토</td>
 							</tr>
 
-							<tr height="150" align="left" valign="top">
+							<tr height="130" align="left" valign="top">
 								<%
 									for (int i3 = 1; i3 < dayOfWeek; i3++) {
 								%>
@@ -253,7 +248,7 @@ body {
 									if ((i + dayOfWeek - 1) % 7 == 0) {
 								%>
 							</tr>
-							<tr height="150" align="left" valign="top">
+							<tr height="130" align="left" valign="top">
 								<%
 									}
 									}
@@ -271,20 +266,19 @@ body {
 
 
 						</table>
-					</div>
 
-				</div>
-			</div>
 
 			<%--오른쪽 부분--%>
-			<div class="col-md-3" role="complementary">
+		<%-- 	<div class="col-md-3" role="complementary">
 				<nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
 					<jsp:include page="/view/rightmenu.jsp"></jsp:include>
 				</nav>
 			</div>
-
+ --%>
 		</div>
 	</div>
+	  </article>
+</main>
 
 
 </body>
